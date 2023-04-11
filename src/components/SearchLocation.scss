@@ -1,0 +1,154 @@
+@import "../mixins";
+
+.search-location-container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4rem 0 4rem 0;
+  position: relative;
+  @include large-width {
+    width: 95%;
+  }
+
+  @include large-width-2 {
+    width: 97%;
+  }
+  @include medium-width-4 {
+    flex-direction: column;
+    gap: 4rem;
+    margin: 2rem 0 -2.5rem 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    background: linear-gradient(to right, #b0b8fa, rgb(55, 93, 165));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include medium-width-3 {
+      font-size: 2rem;
+    }
+  }
+
+  .date {
+    color: #858ab1;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: absolute;
+    left: 0;
+    top: 4.5rem;
+
+    @include medium-width-4 {
+      top: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .search-input {
+      color: #fff;
+      font-size: 1.6rem;
+      height: 4rem;
+      width: 20rem;
+      border: 0.2rem solid transparent;
+      outline: none;
+      letter-spacing: 1px;
+      background-color: #141525;
+      border-radius: 5px 0 0 5px;
+      caret-color: #dddddd;
+      padding: 0.5rem;
+      transition: 0.5s linear;
+      @include medium-width-2 {
+        width: 17rem;
+      }
+      @include medium-width-3 {
+        width: 15rem;
+      }
+      @include small-width-3 {
+        width: 13rem;
+      }
+
+      &:focus {
+        border-bottom: 0.1rem solid #fa4753;
+        caret-color: #fa4753;
+        color: #fa4753;
+        box-shadow: 4px 4px 10px #070707;
+        transition: 0.5s;
+      }
+
+      &:focus::placeholder {
+        color: transparent;
+      }
+
+      &::placeholder {
+        color: #4e4f5e;
+        padding-left: 0.4rem;
+
+        @include small-width-3 {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    button {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #dcdce6;
+      background-color: rgba(124, 126, 214, 0.1);
+      height: 4rem;
+      border: none;
+      transition: 0.5s linear;
+
+      &:hover {
+        color: #fa4753;
+        background-color: #e2e2e2;
+        box-shadow: 4px 4px 10px #1d5c80;
+      }
+    }
+
+    .search-btn {
+      font-size: 2.5rem;
+      border-radius: 0 5px 5px 0;
+      width: 6rem;
+      margin-right: 2rem;
+
+      @include medium-width {
+        margin-right: 0.2rem;
+      }
+
+      @include small-width-3 {
+        width: 4rem;
+        font-size: 2rem;
+      }
+    }
+
+    .current-location-btn {
+      gap: 1rem;
+      font-size: 2rem;
+      border-radius: 5px;
+      width: 15rem;
+
+      @include medium-width {
+        width: 12rem;
+      }
+      @include medium-width-3 {
+        font-size: 1.7rem;
+        width: 10rem;
+      }
+    }
+  }
+}

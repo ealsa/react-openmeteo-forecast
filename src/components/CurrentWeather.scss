@@ -1,0 +1,360 @@
+@import "../mixins";
+
+.current-weather-container {
+  margin-top: 3.5rem;
+  width: 90%;
+  height: 35rem;
+  display: flex;
+  align-items: center;
+  @include large-width {
+    width: 95%;
+  }
+
+  @include large-width-2 {
+    width: 97%;
+  }
+
+  @include large-width-9 {
+    height: 65rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  @include small-width {
+    // border: 1px solid red;
+    margin-top: 0;
+    margin-bottom: -7rem;
+    height: 55rem;
+    grid-template-rows: 0.5fr 0.5fr;
+  }
+
+  .weather-container {
+    flex: 0.5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include large-width-3 {
+      flex: 0.6;
+    }
+    @include large-width-6 {
+      flex: 0.7;
+    }
+
+    @include large-width-9 {
+      grid-area: 1 / 1 / 2 / 2;
+      place-items: end;
+      padding-right: 3rem;
+    }
+
+    @include large-width-9 {
+      padding-right: 0;
+    }
+
+    .location-weather {
+      height: 100%;
+      color: #eff1fa;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6rem;
+      @include large-width-8 {
+        gap: 4rem;
+      }
+      @include large-width-9 {
+        gap: 1rem;
+        align-items: start;
+        justify-content: center;
+      }
+
+      .location-day {
+        @include small-width {
+          margin-top: 2rem;
+        }
+
+        h1 {
+          font-weight: 400;
+          font-size: 3rem;
+          @include large-width-8 {
+            font-size: 2.5rem;
+          }
+
+          @include large-width-9 {
+            font-size: 3.5rem;
+          }
+          @include medium-width-4 {
+            font-size: 3rem;
+          }
+
+          @include small-width {
+            font-size: 2.5rem;
+          }
+          @include small-width-3 {
+            font-size: 2rem;
+          }
+        }
+
+        p {
+          font-size: 2rem;
+          color: rgb(223, 118, 79);
+          @include large-width-8 {
+            font-size: 1.5rem;
+          }
+          @include small-width {
+            font-size: 1.3rem;
+            padding-bottom: 1rem;
+          }
+        }
+      }
+
+      .temp {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include large-width-8 {
+          justify-content: flex-start;
+          gap: 3.5rem;
+        }
+        @include large-width-9 {
+          justify-content: center;
+          gap: 0;
+          height: 55%;
+        }
+        @include small-width {
+          height: 30%;
+        }
+        @include small-width-3 {
+          height: 20%;
+        }
+
+        h1 {
+          font-size: 5rem;
+          font-weight: 500;
+          @include large-width-8 {
+            font-size: 4rem;
+          }
+
+          @include large-width-9 {
+            font-size: 5rem;
+            padding-top: 2rem;
+          }
+          @include small-width {
+            font-size: 4rem;
+          }
+          @include small-width-3 {
+            font-size: 3rem;
+          }
+
+          span {
+            color: #4266ac;
+          }
+        }
+
+        .ws-sr-sn {
+          font-size: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-bottom: 1.5rem;
+          color: #d5d6dd;
+          @include small-width {
+            font-size: 1.3rem;
+          }
+          // @include small-width-3 {
+          //   font-size: 2rem;
+          // }
+
+          p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include small-width-3 {
+              font-size: 1rem;
+            }
+
+            span {
+              padding-right: 1rem;
+              padding-top: 0.5rem;
+              font-size: 2.3rem;
+
+              @include large-width-8 {
+                font-size: 1.3rem;
+                padding-right: 0.5rem;
+              }
+
+              @include large-width-9 {
+                font-size: 2rem;
+              }
+              @include small-width {
+                font-size: 1.5rem;
+              }
+
+              @include small-width-3 {
+                font-size: 1.2rem;
+              }
+            }
+
+            .windspeed-icon {
+              color: lightblue;
+            }
+
+            .sunrise-icon {
+              color: rgb(255, 189, 66);
+            }
+
+            .sunset-icon {
+              color: rgb(235, 94, 42);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .img-div {
+    padding-top: 4rem;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include large-width-4 {
+      flex: 0.8;
+    }
+    @include large-width-6 {
+      flex: 0.6;
+    }
+    @include large-width-9 {
+      grid-area: 1 / 2 / 2 / 3;
+      place-items: start;
+      padding-top: 3rem;
+    }
+
+    img {
+      width: 30rem;
+      margin-right: 2rem;
+
+      @include large-width-3 {
+        width: 28rem;
+      }
+
+      @include large-width-6 {
+        width: 26rem;
+      }
+
+      @include large-width-8 {
+        width: 24rem;
+      }
+      @include small-width {
+        width: 20rem;
+        padding-top: 6rem;
+      }
+      @include small-width-2 {
+        margin-right: 0;
+      }
+      @include small-width-3 {
+        width: 13rem;
+        padding-top: 7.5rem;
+      }
+    }
+  }
+
+  .hourly-forecast-container {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+    background: rgba(14, 16, 78, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(42, 45, 145, 0.12);
+
+    @include large-width-3 {
+      gap: 1rem;
+      justify-content: space-evenly;
+    }
+    @include large-width-6 {
+      gap: 0.5rem;
+    }
+    @include large-width-9 {
+      grid-area: 2 / 1 / 3 / 3;
+    }
+    @include small-width {
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      justify-content: start;
+      gap: 1.2rem;
+      height: 21rem;
+    }
+    @include small-width-3 {
+      margin-top: -10rem;
+    }
+
+    .hourly-weather {
+      flex-basis: calc(100% / 6 - 2rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 12rem;
+      height: 15rem;
+      background: rgba(86, 89, 185, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(124, 126, 214, 0.33);
+      transition: 0.2s linear;
+
+      @include large-width-6 {
+        flex-basis: calc(100% / 6 - 0.5rem);
+      }
+      @include small-width {
+        height: 17rem;
+        min-width: 12rem;
+        flex-shrink: 0;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .hour {
+        font-size: 1.7rem;
+      }
+
+      .img-temp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          width: 5rem;
+          @include small-width {
+            width: 8rem;
+          }
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
+      }
+
+      .hourly-windspeed {
+        font-size: 1.2rem;
+        display: flex;
+        gap: 0.4rem;
+
+        .ws-icon {
+          padding-top: 0.2rem;
+          color: lightblue;
+        }
+      }
+    }
+  }
+}
